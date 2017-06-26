@@ -1,5 +1,4 @@
-selectedSeq = input("Select sequence to use (brain, liver or muscle)")
-seqFile = open("./6.12Seq/"+ selectedSeq+".txt", "r")
+seqFile = open("./6.37Seq/nucleotide.txt", "r")
 seq = []
 lines = seqFile.readlines()[1:]
 for line in lines:

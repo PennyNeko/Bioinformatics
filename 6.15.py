@@ -4,6 +4,7 @@ lines = seqFile.readlines()[1:]
 for line in lines:
     for letter in line:
         seq.append(letter)
+seqFile.close()
 canWin = []
 winningRemoval = []
 canWin.append(False)
