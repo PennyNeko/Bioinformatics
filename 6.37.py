@@ -1,6 +1,7 @@
 def check_seq(sequence, position, ACount, CCount):
     if sequence[position]=='A':
         ACount+=1
+        CCount = 0
         if ACount == 5:
             ACount = 0
             return True
@@ -8,12 +9,15 @@ def check_seq(sequence, position, ACount, CCount):
             return True
     elif sequence[position]=='C':
         CCount+=1
+        ACount = 0
         if CCount == 10:
             CCount = 0
             return True
         elif sequence[position] != sequence[position+1]:
             return True
     else:
+        CCount = 0
+        ACount = 0
         if sequence[position] != sequence[position+1]:
             return True
     return False

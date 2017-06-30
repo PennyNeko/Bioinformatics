@@ -1,12 +1,14 @@
-seqFile = open("./6.15Seq/α-lactalbumin.txt", "r")
-seq = []
-lines = seqFile.readlines()[1:]
-for line in lines:
-    for letter in line:
-        seq.append(letter)
-seqFile.close()
+def readFile():
+    seqFile = open("./6.15Seq/α-lactalbumin.txt", "r")
+    seq = []
+    lines = seqFile.readlines()[1:]
+    for line in lines:
+        for letter in line:
+            seq.append(letter)
+    seqFile.close()
+    return seq
 
-seq = ['A','B','B']
+seq = readFile()
 canWin = []
 winningRemoval = []
 canWin.append(False)
@@ -24,6 +26,8 @@ if (canWin[-1]):
     print("Player A won.")
 else:
     print("Player A lost.")
+for i in range(len(winningRemoval)):
+    print("Length of sequence: " +str(i) +" Can win: "+ str(canWin[i]))
 print("Removing sequence was, starting with Player A:")
 i = len(winningRemoval)-1
 while(i>=0):
